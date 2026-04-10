@@ -1,0 +1,42 @@
+State_Abbr,EV_Count,State_Full,Station_Count,Avg_Price
+WA,150141,Washington,0.0,10.13
+CA,92,California,3.0,27.04
+VA,35,Virginia,0.0,10.62
+MD,33,Maryland,0.0,15.04
+TX,20,Texas,0.0,9.79
+NC,13,North Carolina,0.0,11.65
+IL,12,Illinois,0.0,12.21
+AZ,11,Arizona,0.0,12.74
+CO,11,Colorado,0.0,12.07
+NJ,9,New Jersey,0.0,16.29
+FL,9,Florida,1.0,12.53
+OR,8,Oregon,0.0,11.11
+HI,8,Hawaii,0.0,38.0
+CT,7,Connecticut,0.0,24.37
+NY,7,New York,1.0,19.66
+SC,6,South Carolina,0.0,10.9
+NV,6,Nevada,0.0,11.47
+GA,5,Georgia,0.0,11.4
+DC,5,District of Columbia,0.0,16.88
+MO,4,Missouri,0.0,11.06
+NE,3,Nebraska,0.0,9.07
+KY,3,Kentucky,0.0,10.07
+MA,3,Massachusetts,2.0,23.94
+LA,3,Louisiana,0.0,8.8
+AL,3,Alabama,0.0,11.9
+KS,2,Kansas,0.0,11.21
+ID,2,Idaho,0.0,9.51
+WY,2,Wyoming,0.0,9.14
+OH,2,Ohio,0.0,11.29
+AR,2,Arkansas,0.0,9.59
+BC,2,0,0.0,0.0
+PA,2,Pennsylvania,0.0,12.51
+IN,2,Indiana,0.0,11.38
+UT,2,Utah,0.0,9.97
+MS,1,Mississippi,0.0,10.93
+MT,1,Montana,0.0,10.83
+DE,1,Delaware,0.0,13.56
+NH,1,New Hampshire,0.0,20.6
+AK,1,Alaska,0.0,22.17
+AP,1,0,0.0,0.0
+MN,1,Minnesota,0.0,12.35

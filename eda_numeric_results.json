@@ -1,0 +1,593 @@
+{
+  "caltech_state": null,
+  "caltech_outliers": {
+    "siteID": {
+      "outlier_pct": 2.3600820898118196,
+      "range": [
+        -0.5,
+        3.5
+      ]
+    },
+    "clusterID": {
+      "outlier_pct": 2.3600820898118196,
+      "range": [
+        -56.0,
+        96.0
+      ]
+    },
+    "kWhDelivered": {
+      "outlier_pct": 8.44377195728547,
+      "range": [
+        -8.603124856948853,
+        27.62387442588806
+      ]
+    },
+    "userID": {
+      "outlier_pct": 6.807193293679781,
+      "range": [
+        -1156.5,
+        3047.5
+      ]
+    }
+  },
+  "ev_pop_data_state": {
+    "column": "State",
+    "unique_values": [
+      "WA",
+      "CA",
+      "IL",
+      "NE",
+      "MO",
+      "AZ",
+      "VA",
+      "KY",
+      "NC",
+      "MD",
+      "DC",
+      "WY",
+      "GA",
+      "OR",
+      "FL",
+      "MS",
+      "TX",
+      "AL",
+      "HI",
+      "CO",
+      "CT",
+      "LA",
+      "MT",
+      "NV",
+      "NY",
+      "NJ",
+      "OH",
+      "DE",
+      "PA",
+      "IN",
+      "NH",
+      "BC",
+      "AR",
+      "ID",
+      "UT",
+      "SC",
+      "KS",
+      "AK",
+      "AP",
+      "MA",
+      "MN"
+    ],
+    "top_10": {
+      "WA": 150141,
+      "CA": 92,
+      "VA": 35,
+      "MD": 33,
+      "TX": 20,
+      "NC": 13,
+      "IL": 12,
+      "AZ": 11,
+      "CO": 11,
+      "NJ": 9
+    },
+    "bottom_10": {
+      "PA": 2,
+      "IN": 2,
+      "UT": 2,
+      "MS": 1,
+      "MT": 1,
+      "DE": 1,
+      "NH": 1,
+      "AK": 1,
+      "AP": 1,
+      "MN": 1
+    },
+    "sample_values": [
+      "WA",
+      "WA",
+      "WA",
+      "WA",
+      "WA"
+    ]
+  },
+  "ev_pop_data_outliers": {
+    "Postal Code": {
+      "outlier_pct": 5.987427067689159,
+      "range": [
+        97575.0,
+        98847.0
+      ]
+    },
+    "Model Year": {
+      "outlier_pct": 0.03987187836418973,
+      "range": [
+        2010.5,
+        2030.5
+      ]
+    },
+    "Electric Range": {
+      "outlier_pct": 6.693823846041387,
+      "range": [
+        -145.5,
+        242.5
+      ]
+    },
+    "Base MSRP": {
+      "outlier_pct": 2.295955662471259,
+      "range": [
+        0.0,
+        0.0
+      ]
+    },
+    "Legislative District": {
+      "outlier_pct": 0.0,
+      "range": [
+        -19.5,
+        80.5
+      ]
+    },
+    "DOL Vehicle ID": {
+      "outlier_pct": 8.817001368934491,
+      "range": [
+        63500419.875,
+        345758780.875
+      ]
+    },
+    "2020 Census Tract": {
+      "outlier_pct": 0.2518573650004652,
+      "range": [
+        53002914986.5,
+        53083167022.5
+      ]
+    }
+  },
+  "ev_pop_data_state_dist": {
+    "WA": 150141,
+    "CA": 92,
+    "VA": 35,
+    "MD": 33,
+    "TX": 20,
+    "NC": 13,
+    "IL": 12,
+    "AZ": 11,
+    "CO": 11,
+    "NJ": 9,
+    "FL": 9,
+    "OR": 8,
+    "HI": 8,
+    "CT": 7,
+    "NY": 7,
+    "SC": 6,
+    "NV": 6,
+    "GA": 5,
+    "DC": 5,
+    "MO": 4,
+    "NE": 3,
+    "KY": 3,
+    "MA": 3,
+    "LA": 3,
+    "AL": 3,
+    "KS": 2,
+    "ID": 2,
+    "WY": 2,
+    "OH": 2,
+    "AR": 2,
+    "BC": 2,
+    "PA": 2,
+    "IN": 2,
+    "UT": 2,
+    "MS": 1,
+    "MT": 1,
+    "DE": 1,
+    "NH": 1,
+    "AK": 1,
+    "AP": 1,
+    "MN": 1
+  },
+  "ev_pop_data_low_pop_states": [
+    "KS",
+    "ID",
+    "WY",
+    "OH",
+    "AR",
+    "BC",
+    "PA",
+    "IN",
+    "UT",
+    "MS",
+    "MT",
+    "DE",
+    "NH",
+    "AK",
+    "AP",
+    "MN"
+  ],
+  "charging_patterns_state": null,
+  "charging_patterns_outliers": {
+    "Battery Capacity (kWh)": {
+      "outlier_pct": 2.5,
+      "range": [
+        27.5,
+        119.5
+      ]
+    },
+    "Energy Consumed (kWh)": {
+      "outlier_pct": 0.15151515151515152,
+      "range": [
+        -32.10634508060795,
+        117.19375646324934
+      ]
+    },
+    "Charging Duration (hours)": {
+      "outlier_pct": 0.45454545454545453,
+      "range": [
+        -1.175150947515451,
+        5.685580736675909
+      ]
+    },
+    "Charging Rate (kW)": {
+      "outlier_pct": 0.15151515151515152,
+      "range": [
+        -21.613039726967354,
+        72.97262141685704
+      ]
+    },
+    "Charging Cost (USD)": {
+      "outlier_pct": 0.22727272727272727,
+      "range": [
+        -14.048714535843338,
+        59.06289913807792
+      ]
+    },
+    "State of Charge (Start %)": {
+      "outlier_pct": 0.07575757575757576,
+      "range": [
+        -34.44962402924788,
+        131.51444824145918
+      ]
+    },
+    "State of Charge (End %)": {
+      "outlier_pct": 1.4393939393939394,
+      "range": [
+        22.831109422581626,
+        127.42352651955365
+      ]
+    },
+    "Distance Driven (since last charge) (km)": {
+      "outlier_pct": 0.0,
+      "range": [
+        -140.49659014284222,
+        446.01520897259843
+      ]
+    },
+    "Temperature (°C)": {
+      "outlier_pct": 0.15151515151515152,
+      "range": [
+        -34.97105546508108,
+        65.75352915876634
+      ]
+    },
+    "Vehicle Age (years)": {
+      "outlier_pct": 0.0,
+      "range": [
+        -4.0,
+        12.0
+      ]
+    }
+  },
+  "patterns_stats": {
+    "Energy Consumed (kWh)": {
+      "count": 1254.0,
+      "mean": 42.64289425435557,
+      "std": 22.411704587579184,
+      "min": 0.0457718422773702,
+      "25%": 23.881192998338534,
+      "50%": 42.69140537961698,
+      "75%": 61.20621838430286,
+      "max": 152.23875799921288
+    },
+    "Charging Rate (kW)": {
+      "count": 1254.0,
+      "mean": 25.96300342597954,
+      "std": 14.011326366109985,
+      "min": 1.4725491393748178,
+      "25%": 13.856583201966796,
+      "50%": 25.603799331857445,
+      "75%": 37.502998487922895,
+      "max": 97.34225469987976
+    },
+    "Charging Cost (USD)": {
+      "count": 1320.0,
+      "mean": 22.551351747804052,
+      "std": 10.751493625497584,
+      "min": 0.2343169936142865,
+      "25%": 13.368140591877133,
+      "50%": 22.076360159476437,
+      "75%": 31.646044010357446,
+      "max": 69.40774319393012
+    }
+  },
+  "ev_pop_state": {
+    "column": "State",
+    "unique_values": [
+      "WA"
+    ],
+    "top_10": {
+      "WA": 92676
+    },
+    "bottom_10": {
+      "WA": 92676
+    },
+    "sample_values": [
+      "WA",
+      "WA",
+      "WA",
+      "WA",
+      "WA"
+    ]
+  },
+  "ev_pop_outliers": {
+    "Model Year": {
+      "outlier_pct": 0.06258362467089645,
+      "range": [
+        2011.0,
+        2027.0
+      ]
+    },
+    "Electric Range": {
+      "outlier_pct": 0.0,
+      "range": [
+        -247.5,
+        492.5
+      ]
+    },
+    "Base MSRP": {
+      "outlier_pct": 3.5392118779403514,
+      "range": [
+        0.0,
+        0.0
+      ]
+    },
+    "Legislative District": {
+      "outlier_pct": 0.0,
+      "range": [
+        -19.0,
+        77.0
+      ]
+    }
+  },
+  "ev_pop_state_dist": {
+    "WA": 92676
+  },
+  "ev_pop_low_pop_states": [
+    "WA"
+  ],
+  "station_usage_state": {
+    "column": "State/Province",
+    "unique_values": [
+      "California",
+      "-122.146065",
+      NaN,
+      "-122.113487",
+      "-122.16214",
+      "37.443676",
+      "95148",
+      "37.422104",
+      "0",
+      "94560",
+      "37.422138",
+      "3865",
+      "37.443127",
+      "United States",
+      "2116",
+      "USD",
+      "94301",
+      "623575",
+      "Santa Clara County",
+      "Plug Out at Vehicle"
+    ],
+    "top_10": {
+      "California": 440110,
+      "USD": 4,
+      "0": 2,
+      "-122.16214": 1,
+      "-122.146065": 1,
+      "-122.113487": 1,
+      "2116": 1,
+      "37.443127": 1,
+      "37.443676": 1,
+      "37.422104": 1
+    },
+    "bottom_10": {
+      "37.422104": 1,
+      "37.422138": 1,
+      "623575": 1,
+      "3865": 1,
+      "94560": 1,
+      "94301": 1,
+      "95148": 1,
+      "Plug Out at Vehicle": 1,
+      "Santa Clara County": 1,
+      "United States": 1
+    },
+    "sample_values": [
+      "California",
+      "California",
+      "California",
+      "California",
+      "California"
+    ]
+  },
+  "station_usage_outliers": {},
+  "station_usage_stats": {
+    "Fee": {
+      "count": 440116.0,
+      "mean": 262444.8716181416,
+      "std": 171868652.16306728,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%": 0.57,
+      "75%": 1.94,
+      "max": 114010010164.0
+    },
+    "Energy (kWh)": {
+      "count": 440130.0,
+      "mean": 485139.16267431475,
+      "std": 227776826.6535188,
+      "min": 0.0,
+      "25%": 3.885,
+      "50%": 6.915539,
+      "75%": 11.608,
+      "max": 111210001737.0
+    }
+  },
+  "station_usage_aov": {
+    "count": 440116.0,
+    "mean": 262444.8716181416,
+    "std": 171868652.16306728,
+    "min": 0.0,
+    "25%": 0.0,
+    "50%": 0.57,
+    "75%": 1.94,
+    "max": 114010010164.0
+  },
+  "weather_la_state": null,
+  "weather_la_outliers": {
+    "Unnamed: 0": {
+      "outlier_pct": 0.0,
+      "range": [
+        -1136.5,
+        3409.5
+      ]
+    },
+    "clusterID": {
+      "outlier_pct": 0.0,
+      "range": [
+        39.0,
+        39.0
+      ]
+    },
+    "kWhDelivered": {
+      "outlier_pct": 5.628847845206685,
+      "range": [
+        -11.642749607563019,
+        24.339249312877655
+      ]
+    },
+    "siteID": {
+      "outlier_pct": 0.0,
+      "range": [
+        2.0,
+        2.0
+      ]
+    },
+    "userID": {
+      "outlier_pct": 10.90589270008795,
+      "range": [
+        -1480.0,
+        4360.0
+      ]
+    },
+    "userInputs/0/WhPerMile": {
+      "outlier_pct": 3.913808267370272,
+      "range": [
+        212.5,
+        512.5
+      ]
+    },
+    "userInputs/0/kWhRequested": {
+      "outlier_pct": 2.2867194371152153,
+      "range": [
+        -22.0,
+        58.0
+      ]
+    },
+    "userInputs/0/milesRequested": {
+      "outlier_pct": 4.0457343887423045,
+      "range": [
+        -70.0,
+        170.0
+      ]
+    },
+    "userInputs/0/minutesAvailable": {
+      "outlier_pct": 0.0,
+      "range": [
+        -361.5,
+        922.5
+      ]
+    },
+    "userInputs/0/userID": {
+      "outlier_pct": 10.90589270008795,
+      "range": [
+        -1480.0,
+        4360.0
+      ]
+    },
+    "userInputs/1/WhPerMile": {
+      "outlier_pct": 1.0114335971855761,
+      "range": [
+        212.5,
+        512.5
+      ]
+    },
+    "userInputs/1/kWhRequested": {
+      "outlier_pct": 0.6596306068601583,
+      "range": [
+        -23.80000114440918,
+        61.0
+      ]
+    },
+    "userInputs/1/milesRequested": {
+      "outlier_pct": 1.3192612137203166,
+      "range": [
+        -70.0,
+        170.0
+      ]
+    },
+    "userInputs/1/minutesAvailable": {
+      "outlier_pct": 0.08795074758135445,
+      "range": [
+        -313.25,
+        884.75
+      ]
+    },
+    "userInputs/1/userID": {
+      "outlier_pct": 0.395778364116095,
+      "range": [
+        -3746.625,
+        7756.375
+      ]
+    },
+    "chargingDurationHours": {
+      "outlier_pct": 1.6270888302550572,
+      "range": [
+        -7.3392363935709,
+        17.54187534749508
+      ]
+    },
+    "departure_hour": {
+      "outlier_pct": 0.0,
+      "range": [
+        -26.0,
+        46.0
+      ]
+    }
+  }
+}

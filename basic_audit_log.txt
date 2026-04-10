@@ -1,0 +1,333 @@
+
+==================================================
+Auditing: caltech (caltech_acn_data_2018_2020.parquet)
+==================================================
+- Shape: (57498, 13)
+
+Column Inventory:
+                     dtype  null_count  null_ratio  unique_count
+_id                 object           0    0.000000         57498
+userInputs          object       17858   31.058472         39640
+sessionID           object           0    0.000000         57498
+stationID         category           0    0.000000           115
+spaceID           category           0    0.000000           115
+siteID                int8           0    0.000000             3
+clusterID             int8           0    0.000000             3
+connectionTime      object           0    0.000000         57310
+disconnectTime      object           0    0.000000         57387
+kWhDelivered       float32           0    0.000000         24141
+doneChargingTime    object        2665    4.634944         54562
+timezone          category           0    0.000000             1
+userID             float32       17858   31.058472           826
+
+Head(3):
+                        _id userInputs  ...             timezone userID
+0  5bc90cb9f9af8b0d7fe77cd2       None  ...  America/Los_Angeles    NaN
+1  5bc90cb9f9af8b0d7fe77cd3       None  ...  America/Los_Angeles    NaN
+2  5bc90cb9f9af8b0d7fe77cd4       None  ...  America/Los_Angeles    NaN
+
+[3 rows x 13 columns]
+
+Keys found in caltech:
+  EV_ID: []
+  Station_ID: ['stationID', 'siteID']
+  User_ID: ['userInputs', 'userID']
+  Session_ID: ['sessionID']
+  State: ['stationID', 'clusterID']
+
+==================================================
+Auditing: ev_pop_detail (Electric_Vehicle_Population_Data.parquet)
+==================================================
+- Shape: (150482, 17)
+
+Column Inventory:
+                                                     dtype  ...  unique_count
+VIN (1-10)                                          object  ...          9529
+County                                              object  ...           183
+City                                                object  ...           683
+State                                               object  ...            41
+Postal Code                                        float64  ...           823
+Model Year                                           int64  ...            22
+Make                                                object  ...            37
+Model                                               object  ...           127
+Electric Vehicle Type                               object  ...             2
+Clean Alternative Fuel Vehicle (CAFV) Eligibility   object  ...             3
+Electric Range                                       int64  ...           102
+Base MSRP                                            int64  ...            31
+Legislative District                               float64  ...            49
+DOL Vehicle ID                                       int64  ...        150482
+Vehicle Location                                    object  ...           822
+Electric Utility                                    object  ...            76
+2020 Census Tract                                  float64  ...          2079
+
+[17 rows x 4 columns]
+
+Head(3):
+   VIN (1-10)  ... 2020 Census Tract
+0  KM8K33AGXL  ...      5.303300e+10
+1  1C4RJYB61N  ...      5.303302e+10
+2  1C4RJYD61P  ...      5.307700e+10
+
+[3 rows x 17 columns]
+
+Keys found in ev_pop_detail:
+  EV_ID: ['VIN (1-10)', 'Electric Vehicle Type', 'Clean Alternative Fuel Vehicle (CAFV) Eligibility', 'DOL Vehicle ID', 'Vehicle Location']
+  Station_ID: []
+  User_ID: []
+  Session_ID: []
+  State: ['State', 'Postal Code', 'Legislative District', 'Vehicle Location']
+
+==================================================
+Auditing: charging_patterns (ev_charging_patterns.parquet)
+==================================================
+- Shape: (1320, 20)
+
+Column Inventory:
+                                            dtype  ...  unique_count
+User ID                                    object  ...          1320
+Vehicle Model                              object  ...             5
+Battery Capacity (kWh)                    float64  ...           147
+Charging Station ID                        object  ...           462
+Charging Station Location                  object  ...             5
+Charging Start Time                        object  ...          1320
+Charging End Time                          object  ...          1309
+Energy Consumed (kWh)                     float64  ...          1254
+Charging Duration (hours)                 float64  ...          1320
+Charging Rate (kW)                        float64  ...          1254
+Charging Cost (USD)                       float64  ...          1320
+Time of Day                                object  ...             4
+Day of Week                                object  ...             7
+State of Charge (Start %)                 float64  ...          1320
+State of Charge (End %)                   float64  ...          1320
+Distance Driven (since last charge) (km)  float64  ...          1254
+Temperature (°C)                          float64  ...          1320
+Vehicle Age (years)                       float64  ...           114
+Charger Type                               object  ...             3
+User Type                                  object  ...             3
+
+[20 rows x 4 columns]
+
+Head(3):
+  User ID Vehicle Model  ...     Charger Type      User Type
+0  User_1        BMW i3  ...  DC Fast Charger       Commuter
+1  User_2  Hyundai Kona  ...          Level 1  Casual Driver
+2  User_3    Chevy Bolt  ...          Level 2       Commuter
+
+[3 rows x 20 columns]
+
+Keys found in charging_patterns:
+  EV_ID: ['Vehicle Model', 'Vehicle Age (years)']
+  Station_ID: ['Charging Station ID', 'Charging Station Location']
+  User_ID: ['User ID', 'User Type']
+  Session_ID: []
+  State: ['Charging Station ID', 'Charging Station Location', 'Charging Start Time', 'Charging Cost (USD)', 'State of Charge (Start %)', 'State of Charge (End %)', 'Distance Driven (since last charge) (km)']
+
+==================================================
+Auditing: station_locations (ev_data.csv)
+==================================================
+- Shape: (2567, 14)
+
+Column Inventory:
+                  dtype  null_count  null_ratio  unique_count
+name             object           0    0.000000           297
+latitude        float64           0    0.000000          2097
+longitude       float64           0    0.000000          2097
+rating          float64        1217   47.409427            37
+review_count      int64           0    0.000000            51
+address          object           0    0.000000          2080
+city             object           7    0.272692           294
+state            object           0    0.000000            25
+zip              object          95    3.700818           622
+phone           float64        1940   75.574601           102
+hours            object         747   29.100117           120
+num_connectors    int64           0    0.000000             6
+total_kw          int64           0    0.000000            88
+website          object         401   15.621348           337
+
+Head(3):
+                     name   latitude  ...  total_kw                     website
+0  Revel Charging Station  40.710225  ...       640  https://gorevel.com/charge
+1      Tesla Supercharger  40.717122  ...        72       https://www.tesla.com
+2      Tesla Supercharger  40.714305  ...        72       https://www.tesla.com
+
+[3 rows x 14 columns]
+
+Keys found in station_locations:
+  EV_ID: []
+  Station_ID: ['website']
+  User_ID: []
+  Session_ID: []
+  State: ['state']
+
+==================================================
+Auditing: state_ev_pop (EV_Population.parquet)
+==================================================
+- Shape: (92676, 8)
+
+Column Inventory:
+                           dtype  null_count  null_ratio  unique_count
+State                     object           0         0.0             1
+Model Year                 int64           0         0.0            21
+Make                      object           0         0.0            36
+Electric Vehicle Type     object           0         0.0             2
+Electric Range             int64           0         0.0           108
+Base MSRP                  int64           0         0.0            31
+Legislative District     float64           0         0.0            49
+CAFV Eligibility Simple   object           0         0.0             2
+
+Head(3):
+  State  Model Year  ... Legislative District CAFV Eligibility Simple
+0    WA        2020  ...                 46.0                Eligible
+1    WA        2024  ...                 46.0                Eligible
+2    WA        2024  ...                 43.0                Eligible
+
+[3 rows x 8 columns]
+
+Keys found in state_ev_pop:
+  EV_ID: ['Electric Vehicle Type']
+  Station_ID: []
+  User_ID: []
+  Session_ID: []
+  State: ['State', 'Legislative District']
+
+==================================================
+Auditing: weather_la (ev-charging-forecasting-with-weather-data-LA.parquet)
+==================================================
+- Shape: (2274, 35)
+
+Column Inventory:
+                                    dtype  null_count  null_ratio  unique_count
+Unnamed: 0                          int16           0    0.000000          2274
+_id                                object           0    0.000000          2274
+clusterID                            int8           0    0.000000             1
+connectionTime                     object           0    0.000000          2272
+disconnectTime                     object           0    0.000000          2272
+doneChargingTime                   object         335   14.731750          1911
+kWhDelivered                      float32           0    0.000000          1979
+sessionID                          object           0    0.000000          2274
+siteID                               int8           0    0.000000             1
+spaceID                          category           0    0.000000            50
+stationID                        category           0    0.000000            50
+timezone                         category           0    0.000000             1
+userID                            float32         435   19.129288           191
+userInputs/0/WhPerMile            float32         435   19.129288            52
+userInputs/0/kWhRequested         float32         435   19.129288           165
+userInputs/0/milesRequested       float32         435   19.129288            29
+userInputs/0/minutesAvailable     float32         435   19.129288           397
+userInputs/0/modifiedAt            object         435   19.129288          1838
+userInputs/0/paymentRequired       object         435   19.129288             1
+userInputs/0/requestedDeparture    object         435   19.129288          1839
+userInputs/0/userID               float32         435   19.129288           191
+userInputs/1/WhPerMile            float32        1960   86.191733            35
+userInputs/1/kWhRequested         float32        1960   86.191733            81
+userInputs/1/milesRequested       float32        1960   86.191733            25
+userInputs/1/minutesAvailable     float32        1960   86.191733           192
+userInputs/1/modifiedAt          category        1960   86.191733           314
+userInputs/1/paymentRequired       object        1960   86.191733             1
+userInputs/1/requestedDeparture  category        1960   86.191733           314
+userInputs/1/userID               float32        1960   86.191733            98
+chargingDurationHours             float32           0    0.000000          2168
+chargingDuration                   object           0    0.000000          2168
+extraTimeConnected                 object         335   14.731750          1498
+weather_conditions               category           0    0.000000             7
+departure_hour                       int8           0    0.000000            23
+departure_hour_range             category           0    0.000000            23
+
+Head(3):
+   Unnamed: 0                       _id  ...  departure_hour departure_hour_range
+0           0  5e225f9ff9af8b5c26d21715  ...               2                  2-3
+1           1  5e225f9ff9af8b5c26d21716  ...              21                21-22
+2           2  5e225f9ff9af8b5c26d21717  ...               1                  1-2
+
+[3 rows x 35 columns]
+
+Keys found in weather_la:
+  EV_ID: []
+  Station_ID: ['siteID', 'stationID']
+  User_ID: ['userID', 'userInputs/0/WhPerMile', 'userInputs/0/kWhRequested', 'userInputs/0/milesRequested', 'userInputs/0/minutesAvailable', 'userInputs/0/modifiedAt', 'userInputs/0/paymentRequired', 'userInputs/0/requestedDeparture', 'userInputs/0/userID', 'userInputs/1/WhPerMile', 'userInputs/1/kWhRequested', 'userInputs/1/milesRequested', 'userInputs/1/minutesAvailable', 'userInputs/1/modifiedAt', 'userInputs/1/paymentRequired', 'userInputs/1/requestedDeparture', 'userInputs/1/userID']
+  Session_ID: ['sessionID']
+  State: ['clusterID', 'stationID', 'userInputs/0/kWhRequested', 'userInputs/0/milesRequested', 'userInputs/0/requestedDeparture', 'userInputs/1/kWhRequested', 'userInputs/1/milesRequested', 'userInputs/1/requestedDeparture']
+
+==================================================
+Auditing: station_usage (EVChargingStationUsage.parquet)
+==================================================
+(Sampled 100,000 rows for large file)
+- Shape: (100000, 33)
+
+Column Inventory:
+                                    dtype  null_count  null_ratio  unique_count
+Station Name                     category           0       0.000            24
+MAC Address                      category           0       0.000            47
+Org Name                         category           0       0.000             4
+Start Date                         object           0       0.000         95799
+Start Time Zone                  category           0       0.000             9
+End Date                           object           1       0.001         95491
+End Time Zone                    category           1       0.001             7
+Transaction Date (Pacific Time)    object          29       0.029         95460
+Total Duration (hh:mm:ss)        category           2       0.002         24825
+Charging Time (hh:mm:ss)         category           2       0.002         17446
+Energy (kWh)                     category           2       0.002         85021
+GHG Savings (kg)                 category           3       0.003         11136
+Gasoline Savings (gallons)       category           5       0.005          4513
+Port Type                        category          14       0.014             6
+Port Number                      category           4       0.004             5
+Plug Type                        category           5       0.005             4
+EVSE ID                          category       57616      57.616            29
+Address 1                        category           5       0.005            16
+City                             category           5       0.005             5
+State/Province                   category           5       0.005             5
+Postal Code                      category           5       0.005             6
+Country                          category           5       0.005             4
+Latitude                         category           5       0.005            34
+Longitude                        category           5       0.005            38
+Currency                         category        1703       1.703             8
+Fee                              category           5       0.005             6
+Ended By                         category         205       0.205            18
+Plug In Event Id                 category           8       0.008         18756
+Driver Postal Code               category        3761       3.761           499
+User ID                          category        3127       3.127          8278
+County                           category       57733      57.733             3
+System S/N                       category       57619      57.619            26
+Model Number                     category       57620      57.620             9
+
+Head(3):
+                 Station Name          MAC Address  ... System S/N Model Number
+0  PALO ALTO CA / HAMILTON #1  000D:6F00:015A:9D76  ...        NaN          NaN
+1  PALO ALTO CA / HAMILTON #1  000D:6F00:015A:9D76  ...        NaN          NaN
+2  PALO ALTO CA / HAMILTON #1  000D:6F00:015A:9D76  ...        NaN          NaN
+
+[3 rows x 33 columns]
+
+Keys found in station_usage:
+  EV_ID: ['GHG Savings (kg)', 'Gasoline Savings (gallons)', 'State/Province']
+  Station_ID: ['Station Name']
+  User_ID: ['Driver Postal Code', 'User ID']
+  Session_ID: []
+  State: ['Station Name', 'Start Date', 'Start Time Zone', 'State/Province', 'Postal Code', 'Driver Postal Code', 'System S/N']
+
+==================================================
+Auditing: elec_price (table_4(Table 4).csv)
+==================================================
+- Shape: (62, 6)
+
+Column Inventory:
+                  dtype  null_count  null_ratio  unique_count
+State            object           0         0.0            62
+Residential     float64           0         0.0            60
+Commercial      float64           0         0.0            61
+Industrial      float64           0         0.0            59
+Transportation   object           0         0.0            37
+Total           float64           0         0.0            60
+
+Head(3):
+         State  Residential  Commercial  Industrial Transportation  Total
+0  New England        27.68       20.55       16.28          12.99  23.03
+1  Connecticut        28.75       21.21       17.12          17.77  24.37
+2        Maine        24.29       18.22       12.46              .  19.66
+
+Keys found in elec_price:
+  EV_ID: []
+  Station_ID: []
+  User_ID: []
+  Session_ID: []
+  State: ['State', 'Industrial']

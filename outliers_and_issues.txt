@@ -1,0 +1,9 @@
+OUTLIER AUDIT
+Caltech Outliers: {'Median': np.float32(9.043), 'Mean': np.float32(11.644724), 'Outlier_Count': 4855, 'Outlier_Ratio': 8.44377195728547, 'Range': (np.float64(-8.603124856948853), np.float64(27.62387442588806))}
+
+RECOMMENDATIONS
+1. State name normalization: Convert all State codes to full names or vice versa for successful joins.
+2. Unit conversion: 'Energy (kWh)' in station_usage needs numeric conversion and potential unit check.
+3. Time parsing: connectionTime and Start Date formats vary, need unified pd.to_datetime parsing.
+4. Outlier handling: kWh values above 80-100 might be legitimate for trucks/buses or data errors, need capping.
+5. Join Key: Station matching requires fuzzy matching or lat/lon proximity as 'Station ID' formats differ.
