@@ -22,7 +22,13 @@ IMAGE_DIR = os.path.join(BASE_DIR, "images")
 def load_data(filename):
     path = os.path.join(DATA_DIR, filename)
     if os.path.exists(path):
-        return pd.read_csv(path)
+        try:
+            return pd.read_csv(path)
+        except Exception as e:
+            st.error(f"데이터 파일 읽기 오류: {filename} - {e}")
+            return None
+    else:
+        st.warning(f"데이터 파일을 찾을 수 없습니다: {path}")
     return None
 
 # 사이드바 구성
