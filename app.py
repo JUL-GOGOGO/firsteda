@@ -63,8 +63,67 @@ if menu == "프로젝트 개요":
         - **재방문(Revisit)**: LTV 및 유지율 (Retention, 2회 이상 방문)
         """)
 
-    st.markdown("### 🔗 전략적 엔티티 관계도 (상관관계)")
-    st.image(os.path.join(IMAGE_DIR, "state_correlation_heatmap.png"), use_container_width=True)
+        st.markdown("---")
+        st.markdown("### 📊 비즈니스 성장 퍼널 (Growth Funnel)")
+        
+        # 퍼널 데이터 정의 (전략적 추정치)
+        funnel_data = dict(
+            number=[100, 45, 12, 5],
+            stage=["인지 (거점 노출)", "방문 (충전소 진입)", "충전 (세션 발생)", "단골 (재방문/B2B)"]
+        )
+        fig_funnel = px.funnel(funnel_data, x='number', y='stage', color_discrete_sequence=['#ff4b4b'])
+        fig_funnel.update_traces(textinfo="value+percent initial")
+        fig_funnel.update_layout(showlegend=False, margin=dict(t=20, b=20, l=20, r=20))
+        
+        st.plotly_chart(fig_funnel, use_container_width=True)
+        st.caption("※ 저보급 State의 특성상 인지 단계에서 충전 전환까지의 필터링이 크므로, 재방문(B2B) 고객 확보가 수익성의 핵심입니다.")
+
+        st.markdown("---")
+        st.markdown("### 🧬 데이터 엔티티 관계도 (ERD)")
+        
+        # Mermaid ERD 정의 (상세 버전)
+        mermaid_code = """
+        erDiagram
+            STATE ||--o{ STATION : hosts
+            STATE ||--o{ EV_POPULATION : contains
+            STATION ||--o{ SESSION : records
+            USER ||--o{ SESSION : initiates
+            EV ||--o{ SESSION : plugs_into
+            
+            STATE {
+                string state_code PK
+                string state_name
+                float elec_price
+            }
+            STATION {
+                string station_id PK
+                string org_name
+                float latitude
+                float longitude
+            }
+            SESSION {
+                string session_id PK
+                datetime connection_time
+                float kwh_delivered
+                float calculated_revenue
+                string user_id FK
+            }
+        """
+        
+        # Streamlit에서 Mermaid 렌더링 (HTML 컴포넌트 사용)
+        import streamlit.components.v1 as components
+        
+        html_code = f"""
+        <div class="mermaid" style="display: flex; justify-content: center;">
+            {mermaid_code}
+        </div>
+        <script type="module">
+            import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+            mermaid.initialize({{ startOnLoad: true, theme: 'neutral' }});
+        </script>
+        """
+        components.html(html_code, height=500)
+        st.caption("※ 데이터 필드 정의: 각 엔티티의 주요 컬럼 정보를 통해 정제된 데이터 기반의 분석이 수행됨을 보여줍니다.")
 
 # --- Menu: 주(State) 탐색 ---
 elif menu == "주(State) 탐색":
@@ -119,6 +178,10 @@ elif menu == "수익성 분석":
             "상관계수": [0.97, 0.90, 0.94],
             "강도": ["매우 강함", "강함", "강함"]
         }))
+        st.markdown("---")
+        st.markdown("#### 🔗 세부 변수간 상관관계 히트맵")
+        st.image(os.path.join(IMAGE_DIR, "state_correlation_heatmap.png"), use_container_width=True)
+        st.caption("※ 분석 데이터 기반: EV 보급수와 충전 인프라(Station_Count) 간의 상관관계가 가장 높게 나타납니다.")
 
     with tabs[2]:
         st.image(os.path.join(IMAGE_DIR, "channel_roi_comparison.png"))
